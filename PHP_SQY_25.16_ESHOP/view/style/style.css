@@ -1,0 +1,96 @@
+/* font-family imported  */
+
+@font-face {
+  font-family: RedHat;
+  src: url(Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: RedHatI; /*  here the name depend on you  */
+  src: url(Red_Hat_Display/RedHatDisplay-Italic-VariableFont_wght.ttf);
+}
+
+/*NAVBAR*/
+
+body {
+  color: black;
+  font-family: RedHatI;
+}
+
+nav {
+  position: fixed;
+  right: 2rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* group list  */
+
+nav ul li {
+  list-style-type: none; /* delete the point  */
+}
+
+nav a {
+  text-decoration: none;
+  margin: 1rem;
+  margin-right: 1rem; /* match to 16 px */
+}
+
+nav ul {
+  display: flex;
+  justify-content: end;
+}
+
+/* define the wrapper class dimension*/
+
+.wrapper img {
+  width: 700px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.wrapper {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.wrapper h1 {
+  margin: 0;
+  text-align: center;
+}
+
+/*   
+Products page Organazing */
+
+.products-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
+
+.products-list li {
+  margin: 6px;
+}
+.products-list img {
+  width: 300px;
+  cursor: pointer;
+}
+
+button {
+  height: 70px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
