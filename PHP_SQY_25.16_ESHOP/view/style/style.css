@@ -1,3 +1,12 @@
+/*All default values*/
+
+*:not(nav) {
+  padding: 0;
+  margin: 0;
+}
+
+/*-----------*/
+
 /* font-family imported  */
 
 @font-face {
@@ -10,16 +19,22 @@
   src: url(Red_Hat_Display/RedHatDisplay-Italic-VariableFont_wght.ttf);
 }
 
+/*------------*/
+
+/*  home page and global style  */
+
 /*NAVBAR*/
 
 body {
   color: black;
   font-family: RedHatI;
+  margin: 5px;
 }
 
 nav {
   position: fixed;
   right: 2rem;
+
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.14);
   border-radius: 16px;
@@ -68,8 +83,12 @@ nav ul {
   text-align: center;
 }
 
+/*-------------------*/
+
 /*   
 Products page Organazing */
+
+/*
 
 .products-list {
   margin-top: 20px;
@@ -78,10 +97,29 @@ Products page Organazing */
   column-gap: 1.5rem;
   row-gap: 2rem;
 }
+*/
+
+.products-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  background: black;
+}
 
 .products-list li {
   margin: 6px;
+  inline-size: 500px;
+  overflow-wrap: break-word;
+  margin: 50px;
+  padding: 10px;
+  color: black;
+  background: white;
+  border-radius: 15px;
 }
+
 .products-list img {
   width: 300px;
   cursor: pointer;
@@ -93,4 +131,24 @@ button {
   border: none;
   outline: none;
   border-radius: 15px;
+}
+
+button:hover {
+  background: black;
+  color: red;
+}
+
+/* only product*/
+
+.wrapper .product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+.wrapper .product img {
+  width: 350px;
+  margin-left: 35%;
+  margin-top: 10px;
 }

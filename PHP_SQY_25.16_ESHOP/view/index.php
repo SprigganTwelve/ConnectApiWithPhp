@@ -9,6 +9,9 @@
 
 <body>
     <div class="container">
+
+
+
         <nav>
             <ul>
                 <li><a href="">Accueil</a></li>
@@ -19,7 +22,8 @@
         </nav>
         <div class="wrapper">
             <h1>Bienvenue sur mon app PHP</h1>
-            <img src="style/gojo-extension-du-territoire.jpg" alt="">
+            <img src="../../officeImg.png" alt="">
+
         </div>
 
     </div>

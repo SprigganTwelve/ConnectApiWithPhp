@@ -7,7 +7,8 @@ include "../config/cUrl.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>product</title>
 </head>
 
 <body>
@@ -20,13 +21,13 @@ include "../config/cUrl.php"
 
 
     <div class="wrapper">
-        <h1>Page de produits</h1>
+        <h1>Page du produit</h1>
         <?php
         foreach ($products as $product):
             if ($product['id'] == $_GET['id']):
                 ?>
 
-                <ul class="products-list">
+                <ul class="product">
 
                     <li>
 
