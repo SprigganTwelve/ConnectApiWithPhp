@@ -1,6 +1,10 @@
 <?php
+
+ob_start();
+
 include("../partials/header.php");
 include("../config/pdo.php");
+
 
 
 
@@ -10,45 +14,37 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $infoAbout = $db->prepare('SELECT email , password FROM users ');
-        $user = $infoAbout->fetch(PDO::FETCH_ASSOC);
-        foreach ($user as $key => $value) {
-
-
-
-
-        }
 
 
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-            if ($password == $infoAbout) {
+            $stmt = $db->prepare('SELECT * password FROM users WHERE email = ? ');
+            $stmt->execute($email);
+            $result = $stmt->fetch();
 
+            if ($result) {
 
-
-                if ($result) {
-
-                    header("location:signup-succes.php");
+                $hash = $result['password'];
+                if (password_verify($password, $hash)) {
+                    session_start();
+                    $_SESSION['users'] = $result;
+                    $_SESSION['user']['logged'] = true;
+                    header('location:profile.view.php');
+                    ob_end_flush();
 
                 }
-
+                ;
 
             } else {
 
-                $error = "Les mots de passe sont differents";
+                $error = "L'email ne correspond pas";
 
             }
-            ;
+
 
         } else {
-
-            $error = "L'email ne correspond pas";
-
+            $error = "Veullez remplir tout les champs vides!";
         }
-
-
-    } else {
-        $error = "Veullez remplir tout les champs vides!";
     }
 }
 ;

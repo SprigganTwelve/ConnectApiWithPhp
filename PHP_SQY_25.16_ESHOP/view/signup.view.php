@@ -1,6 +1,7 @@
 <?php
 include("../partials/header.php");
 include("../config/pdo.php");
+include("../utils/functions.php");
 
 
 
@@ -15,24 +16,30 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         if ($password == $confirm) {
 
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $sql = "SELECT * FROM users WHERE  name = ? OR email = ?";
-                $result = $db->prepare($sql);
-                $result->execute([$name, $email]);
 
-
-                $hash = password_hash($password, PASSWORD_DEFAULT);
-
-                $sql = "INSERT INTO users(name,email,password) VALUES (?,?,?)";
-                $result = $db->prepare($sql);
-                $result->execute([$name, $email, $hash]);
-
-                if ($result) {
-
-                    header("location:signup-succes.php");
-
+                if (checkExist('name', $name, $db)) {
+                    $error = "Le nom exist déja";
+                } else if (checkExist("email", $email, $db)) {
+                    $error = "l'email exist déja";
                 } else {
-                    $error = "Erreur lors l'ajout:" . $stmt->errorInfo();
+                    $hash = password_hash($password, PASSWORD_DEFAULT);
+
+
+                    $sql = "INSERT INTO users(name,email,password) VALUES (?,?,?)";
+                    $result = $db->prepare($sql);
+                    $result->execute([$name, $email, $hash]);
+
+                    if ($result) {
+
+                        header("location:signup-succes.php");
+
+                    } else {
+                        $error = "Erreur lors l'ajout:" . $stmt->errorInfo();
+                    }
                 }
+
+
+
 
 
             } else {
