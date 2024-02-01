@@ -17,7 +17,9 @@
                 <li><a href="">Accueil</a></li>
                 <li><a href="products.php">Produits</a></li>
                 <li><a href="">Contact</a></li>
-                <li><a href="">SignUp</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="signup.view.php">SignUp</a></li>
+
             </ul>
         </nav>
         <div class="wrapper">

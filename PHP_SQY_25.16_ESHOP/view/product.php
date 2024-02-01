@@ -21,6 +21,14 @@ include "../config/cUrl.php"
 
 
     <div class="wrapper">
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="products.php">Produits</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">SignUp</a></li>
+            </ul>
+        </nav>
         <h1>Page du produit</h1>
         <?php
         foreach ($products as $product):
