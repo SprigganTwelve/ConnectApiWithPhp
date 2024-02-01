@@ -12,6 +12,7 @@ include("../config/pdo.php");
     <h2>
         <?= $_SESSION['user']['email'] ?>
     </h2>
+    <img class="profile-avatar" src="../uploadAvatar/gojo-extension-du-territoire.jpg" alt="Avatar">
 </div>
 
 <?php

@@ -164,3 +164,10 @@ form input {
 .error {
   color: red;
 }
+
+/*Profile*/
+.profile-avartar {
+  width: 5rem !important;
+  height: 8rem !important;
+  border-radius: 100%;
+}

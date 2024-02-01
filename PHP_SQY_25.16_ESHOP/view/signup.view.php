@@ -18,8 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
                 if (checkExist('name', $name, $db)) {
+
                     $error = "Le nom exist déja";
+
                 } else if (checkExist("email", $email, $db)) {
+
                     $error = "l'email exist déja";
                 } else {
                     $hash = password_hash($password, PASSWORD_DEFAULT);

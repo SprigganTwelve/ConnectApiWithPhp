@@ -18,9 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-            $stmt = $db->prepare('SELECT * password FROM users WHERE email = ? ');
-            $stmt->execute($email);
-            $result = $stmt->fetch();
+            $stmt = $db->prepare('SELECT * FROM users WHERE email = ? ');
+            $stmt->execute([$email]);
+
+            if ($stmt->rowCount() > 0) {
+                $result = $stmt->fetch();
+            } else {
+                $error = "Compte inexsitant";
+            }
+
 
             if ($result) {
 
@@ -32,19 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     header('location:profile.view.php');
                     ob_end_flush();
 
+
+                } else if (!password_verify($password, $hash)) {
+                    $error = 'mot de passe incorrect';
                 }
-                ;
-
-            } else {
-
-                $error = "L'email ne correspond pas";
 
             }
 
 
         } else {
-            $error = "Veullez remplir tout les champs vides!";
+
+            $error = "Verifier la syntaxe de votre email";
+
         }
+
+    } else {
+        $error = "veullez remplir les champs vides";
     }
 }
 ;
@@ -59,6 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         <input type="submit" name="submit" value="Envoyer">
     </form>
+    <div>
+        <p class="error">
+            <?= @$error; ?>
+        </p>
+
+    </div>
 </div>
 
 <?php
