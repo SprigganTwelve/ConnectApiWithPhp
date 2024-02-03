@@ -1,8 +1,9 @@
 <?php
 
-ob_start();
-
+/*ob_start()....  ob_end_flush(); */
+session_start();
 include("../partials/header.php");
+include("../utils/functions.php");
 include("../config/pdo.php");
 
 
@@ -18,30 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-            $stmt = $db->prepare('SELECT * FROM users WHERE email = ? ');
-            $stmt->execute([$email]);
+            if (checkExist("email", $email, $db)) {
 
-            if ($stmt->rowCount() > 0) {
+                $stmt = $db->prepare('SELECT * FROM users WHERE email = ? ');
+                $stmt->execute([$email]);
                 $result = $stmt->fetch();
-            } else {
-                $error = "Compte inexsitant";
-            }
-
-
-            if ($result) {
-
                 $hash = $result['password'];
                 if (password_verify($password, $hash)) {
-                    session_start();
                     $_SESSION['users'] = $result;
                     $_SESSION['user']['logged'] = true;
                     header('location:profile.view.php');
-                    ob_end_flush();
-
-
                 } else if (!password_verify($password, $hash)) {
                     $error = 'mot de passe incorrect';
                 }
+
+            } else {
+
+                $error = "Compte inexistant";
 
             }
 
