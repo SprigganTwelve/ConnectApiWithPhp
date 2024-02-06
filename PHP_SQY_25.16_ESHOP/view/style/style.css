@@ -199,6 +199,7 @@ textarea {
   justify-content: center;
   height: 100%;
   flex-direction: column;
+  font-size: 15px;
 }
 
 .selfItems {
@@ -208,6 +209,7 @@ textarea {
   width: 900px;
   align-items: stretch;
   border-radius: 20px;
+  margin: 5px;
 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -227,6 +229,7 @@ textarea {
   flex-direction: column;
   gap: 10px;
   background-color: rgb(154, 183, 199);
+  border-radius: 20px 0px 0px 20px;
 }
 
 .selfItems .aboutYou,
@@ -257,4 +260,17 @@ header {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+}
+
+/*FOOTER*/
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  font-size: 1rem;
+  text-decoration: none;
 }
