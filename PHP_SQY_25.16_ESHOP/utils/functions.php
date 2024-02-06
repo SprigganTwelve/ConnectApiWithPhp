@@ -7,3 +7,10 @@ function checkExist($field, $param, $pdo)
     $result->execute([$param]);
     return ($result->rowCount() > 0) ? true : false;
 }
+
+function dd($param)
+{
+    echo '<pre>';
+    echo "$param";
+    echo "</pre>";
+}

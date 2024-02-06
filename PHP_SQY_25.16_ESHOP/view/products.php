@@ -32,7 +32,9 @@ include "../config/cUrl.php";
             </h2>
 
             <button>
-                Ajouter au panier
+
+                <a href="Panier.view.php?product=<?= $product['id'] ?>"> Ajouter au panier</a>
+
             </button>
 
         </li>

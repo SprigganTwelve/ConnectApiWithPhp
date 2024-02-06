@@ -152,6 +152,8 @@ button:hover {
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   font-size: 20px;
 }
@@ -159,6 +161,23 @@ form {
 form input {
   width: 15rem;
   height: 1.5rem;
+  margin-top: 0.2rem;
+  border-radius: 6px;
+  border: solid 1px gray;
+  padding-left: 0.5rem;
+}
+
+input[type="submit"] {
+  width: 15rem;
+  height: 2rem;
+  background-color: darkslategray;
+  width: 16rem;
+  border: gray solid 1px;
+  color: white;
+}
+
+textarea {
+  width: 15rem;
 }
 
 .error {
