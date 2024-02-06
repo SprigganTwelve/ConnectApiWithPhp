@@ -14,8 +14,8 @@ if (isset($_GET["product"])) {
 <?php foreach ($products as $product):
     ?>
 
-    <?php if (isset($id)):
-        ?>
+    <?php if (isset($id) && $id == $product['id']): ?>
+
         <?php $_SESSION["user"]['cart'][$id] = $product;
         ?>
         <h2>Vous avez ajoutez
@@ -37,6 +37,7 @@ if (isset($_GET["product"])) {
         <h3>
             <?= $item['title'] ?>
         </h3>
+        <img src="<?= $item['image'] ?>" alt="">
         <p>prix :
             <?= $item['price'] ?>
         </p>

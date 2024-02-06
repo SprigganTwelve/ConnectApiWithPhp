@@ -190,3 +190,71 @@ textarea {
   height: 8rem !important;
   border-radius: 100%;
 }
+
+/*profile*/
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.selfItems {
+  display: flex;
+  flex-direction: row !important;
+
+  width: 900px;
+  align-items: stretch;
+  border-radius: 20px;
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.selfItems img {
+  width: 300px;
+  border-radius: 50%;
+}
+
+.selfItems .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(154, 183, 199);
+}
+
+.selfItems .aboutYou,
+.foot {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-around;
+}
+
+.selfItems .foot div {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .selfItems * {
+  padding: 10px;
+}
+
+header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 12px;
+}
+
+.title {
+  top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}

@@ -11,6 +11,7 @@ function checkExist($field, $param, $pdo)
 function dd($param)
 {
     echo '<pre>';
-    echo "$param";
+    var_dump($param);
     echo "</pre>";
+    die();
 }
