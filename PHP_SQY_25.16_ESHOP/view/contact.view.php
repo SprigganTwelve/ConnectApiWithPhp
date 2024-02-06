@@ -25,6 +25,9 @@ endif ?>
 
 
 
+
+
+
 <?php
 include("../partials/footer.php");
 require("../controllers/contact.php");
