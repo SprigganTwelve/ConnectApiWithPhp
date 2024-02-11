@@ -1,5 +1,16 @@
 <?php
 
+require_once("../view/contact.view.php");
+
+include("config/dotenv.php");
+//require_once("../config/php_mailer.php");
+
+require_once("vendor/autoload.php");
+
+
+
+
+
 
 
 // On utilise la classe PHPMailer
@@ -8,6 +19,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $email = $_POST['email'];
     $subject = htmlspecialchars($_POST['object']);
     $body = htmlspecialchars($_POST['message']);
@@ -19,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             //Server settings
             $mail->isSMTP();
-            $mail->Host = SMTP_HOST;
+            $mail->Host = $mailhost;
             $mail->SMTPAuth = true;
-            $mail->Username = SMTP_USERNAME;
-            $mail->Password = SMTP_PASSWORD;
-            $mail->SMTPSecure = SMTP_ENCRYPTION;
-            $mail->Port = SMTP_PORT;
+            $mail->Username = $mailuser;
+            $mail->Password = $mailpassword;
+            $mail->SMTPSecure = $mailencrypt;
+            $mail->Port = $smtpport;
 
             //Recipients
             $mail->setFrom($email);

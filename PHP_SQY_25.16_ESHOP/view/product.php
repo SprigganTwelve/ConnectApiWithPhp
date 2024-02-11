@@ -1,5 +1,5 @@
 <?php
-include "../config/cUrl.php"
+include "../partials/header.php"
     ?>
 
 <html lang="en">

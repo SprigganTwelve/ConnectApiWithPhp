@@ -1,3 +1,4 @@
-/uploadAvatar
-/controllers
-/config
+uploadAvatar
+controllers
+config
+.env

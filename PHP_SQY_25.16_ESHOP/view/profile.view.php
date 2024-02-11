@@ -1,15 +1,8 @@
 <?php
-session_start();
-include("../partials/header.php");
-include("../config/pdo.php");
-if (isset($_GET['user']['logged'])) {
-} else {
 
-}
+include("../partials/header.php");
 
 ?>
-
-
 
 
 <div class="container">

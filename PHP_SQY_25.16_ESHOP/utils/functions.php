@@ -8,6 +8,7 @@ function checkExist($field, $param, $pdo)
     return ($result->rowCount() > 0) ? true : false;
 }
 
+
 function dd($param)
 {
     echo '<pre>';

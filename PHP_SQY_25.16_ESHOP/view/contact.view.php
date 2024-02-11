@@ -1,8 +1,8 @@
 <?php
 
 include("../partials/header.php");
-require_once("../config/php_mailer.php");
-require_once("../vendor/autoload.php");
+
+
 
 ?>
 <div class="wrapper">
@@ -30,5 +30,5 @@ endif ?>
 
 <?php
 include("../partials/footer.php");
-require("../controllers/contact.php");
+
 ?>

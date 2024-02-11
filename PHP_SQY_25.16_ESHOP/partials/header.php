@@ -1,9 +1,6 @@
 <?php
 @session_start();
 
-include("../utils/functions.php");
-
-$_SERVER["REQUEST_URI"] === '/index.php' ? $path = 'views/' : $path = '';
 
 
 ?>
@@ -13,6 +10,8 @@ $_SERVER["REQUEST_URI"] === '/index.php' ? $path = 'views/' : $path = '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Eshop PHP</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -20,22 +19,28 @@ $_SERVER["REQUEST_URI"] === '/index.php' ? $path = 'views/' : $path = '';
 <body>
     <div class="container">
         <nav>
-            <ul>
 
-                <li><a href="<?= $path ?>index.php">Accueil</a></li>
-                <li><a href="<?= $path ?>contact.php">Contact</a></li>
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+
+            <ul class="menu">
+                <p class="close-menu">X</p>
+
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="contact.php">Contact</a></li>
 
                 <?php if (isset($_SESSION['user']['logged'])): ?>
 
 
-                    <li><a href="<?= $path ?>products.php">Produits</a></li>
+                    <li><a href="products.php">Produits</a></li>
                     <li><a href="#">Logout</a></li>
 
 
                 <?php else: ?>
 
-                    <li><a href="<?= $path ?>login.php">Login</a></li>
-                    <li><a href="<?= $path ?>signup.view.php">SignUp</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="signup.view.php">SignUp</a></li>
 
 
                 <?php endif ?>

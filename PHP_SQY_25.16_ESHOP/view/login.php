@@ -25,11 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $stmt->execute([$email]);
                 $result = $stmt->fetch();
                 $hash = $result['password'];
+
                 if (password_verify($password, $hash)) {
                     $_SESSION['users'] = $result;
                     $_SESSION['user']['logged'] = true;
                     header('location:profile.view.php');
+
                 } else if (!password_verify($password, $hash)) {
+
                     $error = 'mot de passe incorrect';
                 }
 
@@ -55,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 <div class="wrapper">
     <h1>Login</h1>
-    <form action="" method="post" class="signup">
+    <form action="profile" method="post" class="signup">
 
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Mot de passe">
