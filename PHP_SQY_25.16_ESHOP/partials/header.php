@@ -18,14 +18,12 @@
 
 <body>
     <div class="container">
+
+        <span class="material-symbols-outlined burger-menu">
+            menu
+        </span>
         <nav>
-
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-
-            <ul class="menu">
-                <p class="close-menu">X</p>
+            <ul class="dropDown">
 
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="contact.php">Contact</a></li>

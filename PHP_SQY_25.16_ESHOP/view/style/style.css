@@ -15,27 +15,32 @@
 /*  home page and global style  */
 
 /*NAVBAR*/
-
-body {
-  color: black;
-  font-family: RedHatI;
-  margin: 9px;
+* {
   padding: 0;
   margin: 0;
 }
 
+body {
+  color: black;
+  font-family: RedHatI;
+}
+
 nav {
   position: fixed;
-  right: 2rem;
-  top: 5px;
-  width: 100vh;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  height: 100vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  visibility: hidden;
+  /*https://css.glass is an good widesite*/
 }
 
 /* group list  */
@@ -46,47 +51,22 @@ nav ul li {
 
 nav a {
   text-decoration: none;
-  margin: 1rem;
-  margin-right: 1rem; /* match to 16 px */
 }
 
-.burger-menu {
-  width: 3rem;
-  height: 3rem;
+.material-symbols-outlined {
   position: fixed;
   left: 1rem;
   top: 0.6rem;
   cursor: pointer;
-}
-
-.menu {
-  position: fixed;
-  left: -100%;
-  height: 100vh;
-  background: gray;
-  transition: left 0.3s ease-in-out;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-}
-
-.close-menu {
-  position: fixed;
-  top: 0.6rem;
-  left: 1rem;
-}
-
-.open {
-  left: 0;
+  font-size: 3rem;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 24, "opsz" 24;
 }
 
 /* define the wrapper class dimension*/
 
 .wrapper img {
-  width: 700px;
+  width: 40rem;
+  height: 20rem;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -227,6 +207,7 @@ textarea {
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
   flex-direction: column;
   font-size: 15px;
 }
@@ -302,4 +283,6 @@ footer {
   color: gray;
   font-size: 1rem;
   text-decoration: none;
+  width: 100%;
+  margin-bottom: 5px;
 }
