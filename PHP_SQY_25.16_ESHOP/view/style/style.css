@@ -32,6 +32,7 @@ nav {
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 23;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,9 +40,19 @@ nav {
   font-weight: bold;
   background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  visibility: hidden;
+  transform: translate(-100%);
+  transition: all 3s;
   /*https://css.glass is an good widesite*/
 }
+
+/*animate on burger menu */
+.material-symbols-outlined {
+  transition: width 2s, height 2s, background-color 2s, rotate 2s;
+}
+
+/*-----animate drop list---------*/
+
+/*----------------*/
 
 /* group list  */
 
@@ -59,6 +70,7 @@ nav a {
   top: 0.6rem;
   cursor: pointer;
   font-size: 3rem;
+  z-index: 143;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 24, "opsz" 24;
 }
 

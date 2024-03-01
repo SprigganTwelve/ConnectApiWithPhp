@@ -1,10 +1,17 @@
-const menu = document.querySelector(".menu");
-const burger = document.querySelector(".burger-menu");
-const close_btn = document.querySelector(".close-menu");
+const menu = document.querySelector(".material-symbols-outlined");
+const nav = document.querySelector("nav");
+var open = true;
 
-burger.addEventListener("click", () => {
-  menu.classList.toggle("open");
-});
-close_btn.addEventListener("click", () => {
-  menu.classList.remove("open");
+menu.addEventListener("click", () => {
+  if (open) {
+    nav.style.transform = "translate(0%)";
+    menu.style.rotate = "180deg";
+    setTimeout((menu.textContent = "X"), 120);
+    open = false;
+  } else {
+    nav.style.transform = "translate(-100%)";
+    menu.style.rotate = "-180deg";
+    setTimeout((menu.textContent = "menu"), 120);
+    open = true;
+  }
 });
