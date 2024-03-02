@@ -1,8 +1,6 @@
 <?php
 
 include("../partials/header.php");
-
-
 require "../config/php_mailer.php";
 require '../vendor/phpmailer/src/Exception.php';
 require '../vendor/phpmailer/src/PHPMailer.php';

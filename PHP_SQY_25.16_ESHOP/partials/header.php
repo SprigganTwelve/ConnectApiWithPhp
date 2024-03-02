@@ -2,7 +2,6 @@
 @session_start();
 
 
-
 ?>
 
 <html lang="en">
@@ -25,20 +24,20 @@
         <nav>
             <ul class="dropDown">
 
-                <li><a href="index.view.php">Accueil</a></li>
-                <li><a href="contact.views.php">Contact</a></li>
+                <li><a href="./index.view.php">Accueil</a></li>
+                <li><a href="./contact.view.php">Contact</a></li>
 
                 <?php if (isset($_SESSION['user']['logged'])): ?>
 
 
-                    <li><a href="products.php">Produits</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="./products.php">Produits</a></li>
+                    <li><a href="./logout.php">Logout</a></li>
 
 
                 <?php else: ?>
 
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="signup.view.php">SignUp</a></li>
+                    <li><a href="./login.php">Login</a></li>
+                    <li><a href="./signup.view.php">SignUp</a></li>
 
 
                 <?php endif ?>

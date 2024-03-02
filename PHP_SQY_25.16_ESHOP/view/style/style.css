@@ -121,6 +121,7 @@ Products page Organazing */
   flex-direction: row;
   justify-content: center;
   background: black;
+  border-radius: 10px;
 }
 
 .products-list li {
@@ -223,8 +224,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+
   flex-direction: column;
   font-size: 15px;
 }
@@ -292,7 +292,6 @@ header {
 /*FOOTER*/
 
 footer {
-  position: fixed;
   bottom: 0px;
   display: flex;
   justify-content: center;
@@ -302,4 +301,5 @@ footer {
   text-decoration: none;
   width: 100%;
   margin-bottom: 5px;
+  margin-top: 6px;
 }

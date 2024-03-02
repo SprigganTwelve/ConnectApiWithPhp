@@ -1,5 +1,6 @@
 <?php
 include "../partials/header.php";
+require "../controllers/session.opened.php";
 include "../config/cUrl.php";
 include("../utils/functions.php");
 
