@@ -1,7 +1,7 @@
 <?php
 
-/*ob_start()....  ob_end_flush(); */
-session_start();
+// ob_start();
+// session_start();
 include("../partials/header.php");
 include("../utils/functions.php");
 include("../config/pdo.php");
@@ -9,7 +9,7 @@ include("../config/pdo.php");
 
 
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
+if (isset($_POST)/* or $_SERVER['REQUEST_METHOD'] === "POST"*/) {
     if (!empty(!empty($_POST["email"]) && !empty($_POST["password"]))) {
 
 
@@ -25,13 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $stmt->execute([$email]);
                 $result = $stmt->fetch();
                 $hash = $result['password'];
+                $password = md5($password);
 
-                if (password_verify($password, $hash)) {
+
+                if ($password == $hash) {
                     $_SESSION['users'] = $result;
                     $_SESSION['user']['logged'] = true;
                     header('location:profile.view.php');
+                    ob_end_flush();
 
-                } else if (!password_verify($password, $hash)) {
+                } else {
 
                     $error = 'mot de passe incorrect';
                 }
@@ -58,21 +61,21 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 <div class="wrapper">
     <h1>Login</h1>
-    <form action="profile" method="post" class="signup">
-
+    <form action="" method="post">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Mot de passe">
-
         <input type="submit" name="submit" value="Envoyer">
     </form>
-    <div>
+    <?php if (isset($error)): ?>
         <p class="error">
-            <?= @$error; ?>
+            <?= $error ?>
         </p>
-
-    </div>
+    <?php endif ?>
 </div>
 
 <?php
 include("../partials/footer.php");
+
+
+
 ?>

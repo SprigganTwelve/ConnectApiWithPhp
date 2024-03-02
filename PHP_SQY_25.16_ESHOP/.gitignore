@@ -2,3 +2,4 @@ uploadAvatar
 controllers
 config
 .env
+launch.json

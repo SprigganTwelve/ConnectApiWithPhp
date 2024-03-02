@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
                     $error = "l'email exist déja";
                 } else {
-                    $hash = password_hash($password, PASSWORD_DEFAULT);
+                    $hash = md5($password);
 
 
                     $sql = "INSERT INTO users(name,email,password) VALUES (?,?,?)";

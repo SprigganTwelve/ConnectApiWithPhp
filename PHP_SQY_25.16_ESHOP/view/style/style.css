@@ -76,7 +76,7 @@ nav a {
 
 /* define the wrapper class dimension*/
 
-.wrapper img {
+.wrapper > img {
   width: 40rem;
   height: 20rem;
   border-radius: 5px;
@@ -176,29 +176,34 @@ form {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
+  margin-bottom: 5rem;
 }
 
 form input {
-  width: 15rem;
-  height: 1.5rem;
+  width: 18rem;
+  height: 2.4rem;
   margin-top: 0.2rem;
   border-radius: 6px;
   border: solid 1px gray;
   padding-left: 0.5rem;
+  font-size: 1.4rem;
+  padding: 5px;
 }
 
 input[type="submit"] {
-  width: 15rem;
-  height: 2rem;
+  width: 18rem;
+  height: 2.4rem;
   background-color: darkslategray;
-  width: 16rem;
   border: gray solid 1px;
   color: white;
+  padding: 5px;
+  font-size: 1.7rem;
 }
 
 textarea {
-  width: 15rem;
+  width: 18rem;
+  height: 15rem;
+  font-size: 1.7rem;
 }
 
 .error {

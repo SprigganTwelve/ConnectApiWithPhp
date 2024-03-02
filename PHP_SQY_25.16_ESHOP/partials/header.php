@@ -25,14 +25,14 @@
         <nav>
             <ul class="dropDown">
 
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="index.view.php">Accueil</a></li>
+                <li><a href="contact.views.php">Contact</a></li>
 
                 <?php if (isset($_SESSION['user']['logged'])): ?>
 
 
                     <li><a href="products.php">Produits</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="logout.php">Logout</a></li>
 
 
                 <?php else: ?>
