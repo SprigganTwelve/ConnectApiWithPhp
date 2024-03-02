@@ -23,7 +23,7 @@ Pour accéder au site web dans votre navigateur, il vous est impératif de suivr
 
 +  Toujours avec vos serveurs apache et MySql activés, lancer le fichier index.view.php se trouvant dans le dossier  >views. ( vous pouvez par exemple copier et coller l'url du fichier dans le navigateur) 
 
->[!WARING] 
+>[!IMPORTANT] 
 >S'il vous semble que le fichier est inexécutable et que vous ne voyez que du code dans votre navigateur , assurez vous d'avoir remplacer dans votre url '....htdcos/' par 'localhost' car vous utiliser XAMMP un serveur local.
 
 Nous vous souhaitons une bonne visite ! :)
